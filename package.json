@@ -1,7 +1,7 @@
 {
   "name": "backend",
   "version": "1.0.0",
-  "description": "server folder",
+  "description": "a backend server created with nodejs",
   "main": "server.js",
   "scripts": {
     "start": "node .",
@@ -9,22 +9,29 @@
   },
   "repository": {
     "type": "git",
-    "url": "master"
+    "url": "git+https://github.com/kelvinogodo/moneke.git"
   },
   "keywords": [
-    "backend"
+    "a",
+    "trading",
+    "website"
   ],
   "author": "kelvin ogodo",
   "license": "ISC",
-  "dependencies": {
-    "cors": "^2.8.5",
-    "dotenv": "^16.0.1",
-    "express": "^4.18.1",
-    "jsonwebtoken": "^8.5.1",
-    "mongoose": "^6.3.6",
-    "serve-static": "^1.15.0"
+  "bugs": {
+    "url": "https://github.com/kelvinogodo/moneke/issues"
   },
-  "devDependencies": {
-    "nodemon": "^2.0.19"
+  "homepage": "https://github.com/kelvinogodo/moneke#readme",
+  "dependencies": {
+    "bcrypt": "^5.1.0",
+    "cors": "^2.8.5",
+    "dotenv": "^16.0.3",
+    "express": "^4.18.2",
+    "handlebars": "^4.7.7",
+    "jsonwebtoken": "^9.0.0",
+    "mongoose": "^6.8.1",
+    "nodemailer": "^6.8.0",
+    "nodemailer-express-handlebars": "^6.0.0",
+    "serve-static": "^1.15.0"
   }
 }
