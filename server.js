@@ -475,18 +475,18 @@ app.post('/api/invest', async (req, res) => {
 
     const money = (() => {
       switch (req.body.percent) {
-        case '2%':
-          return (req.body.amount * 2) / 100
-        case '3.5%':
-          return (req.body.amount * 3.5) / 100
-        case '4.5%':
-          return (req.body.amount * 4.5) / 100
         case '6%':
           return (req.body.amount * 6) / 100
-        case '7%':
-          return (req.body.amount * 7) / 100
-        case '8.5%':
-          return (req.body.amount * 8.5) / 100
+        case '10%':
+          return (req.body.amount * 10) / 100
+        case '38%':
+          return (req.body.amount * 38) / 100
+        case '15%':
+          return (req.body.amount * 15) / 100
+        case '12%':
+          return (req.body.amount * 12) / 100
+        case '50%':
+          return (req.body.amount * 50) / 100
       }
     })()
     if (user.capital >= req.body.amount) {
@@ -534,19 +534,6 @@ app.post('/api/invest', async (req, res) => {
 
 const change = (users, now) => {
   users.forEach((user) => {
-    // try {
-    //   async()=>{
-    //    await User.updateMany({}, {
-    //      $set: {
-    //        upline: '',
-    //        username: user.firstname
-    //     }
-    //   })
-    //   }
-    //   console.log('model updated successfully')
-    // } catch (error) {
-    //   console.log(error)
-    // }
      
     user.investment.map(async (invest) => {
       if (isNaN(invest.started)) {
