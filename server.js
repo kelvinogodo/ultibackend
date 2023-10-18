@@ -479,8 +479,8 @@ app.post('/api/invest', async (req, res) => {
           return (req.body.amount * 6) / 100
         case '10%':
           return (req.body.amount * 10) / 100
-        case '38%':
-          return (req.body.amount * 38) / 100
+        case '40%':
+          return (req.body.amount * 40) / 100
         case '15%':
           return (req.body.amount * 15) / 100
         case '12%':
@@ -513,7 +513,7 @@ app.post('/api/invest', async (req, res) => {
             type:'investment',
             amount: req.body.amount,
             date: now.toLocaleString(),
-            balance: user.funded,
+            balance: user.funded + req.body.amount,
             id:crypto.randomBytes(32).toString("hex")
           }
         }
