@@ -495,28 +495,33 @@ app.post('/api/invest', async (req, res) => {
         { email: email },
         {
           $set: {capital : user.capital - req.body.amount, totalprofit : user.totalprofit + money ,withdrawDuration: now.getTime()},
-          $push: {investment:
-            {
-            type:'investment',
-            amount : req.body.amount,
+        }
+      )
+      await User.updateOne(
+        { email: email },
+        { $push: {
+          investment:
+          {
+            type: 'investment',
+            amount: req.body.amount,
             plan: req.body.plan,
-            percent:req.body.percent,
+            percent: req.body.percent,
             startDate: now.toLocaleString(),
             endDate: now.setDate(now.getDate() + 432000).toLocaleString(),
             profit: money,
-            ended:259200000,
-            started:now.getTime(),
-            periodicProfit:0
+            ended: 259200000,
+            started: now.getTime(),
+            periodicProfit: 0
           },
-          transaction:{
-            type:'investment',
+          transaction: {
+            type: 'investment',
             amount: req.body.amount,
             date: now.toLocaleString(),
             balance: user.funded + req.body.amount,
-            id:crypto.randomBytes(32).toString("hex")
+            id: crypto.randomBytes(32).toString("hex")
           }
-      }
         }
+      }
       )
       res.json({ status: 'ok', amount: req.body.amount })
     } else {
