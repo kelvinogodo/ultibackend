@@ -399,7 +399,7 @@ app.post('/api/withdraw', async (req, res) => {
       subject:'Failed Withdrawal Alert',
       email: user.email,
       name: user.firstname,
-      withdrawMessage:`We have received your withdrawal order, but you can only withdraw your profits. Kindly invest more, to rack up more profit, Thanks.`
+      withdrawMessage:`We have received your withdrawal order, but you can only withdraw you insufficient amount in your account. Kindly deposit and invest more, to rack up more profit, Thanks.`
       })
   }}
    catch (error) {
